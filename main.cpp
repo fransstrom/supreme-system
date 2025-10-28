@@ -1,5 +1,10 @@
 #include <iostream>
-int main (int argc, char *argv[]) {
-  
+#include "Position.hpp"
+
+int main (int argc, char *argv[]) 
+{
+  Position pos;
+  pos.print();
+
   return 0;
 }
