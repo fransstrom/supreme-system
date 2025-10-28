@@ -7,9 +7,10 @@ int main(int argc, char *argv[]) {
   pos.move(8.3232, 13.3232);
 
   pos.print();
-  const Device dev(1, "Firesensor"); 
+  Device dev(1, "Firesensor"); 
   dev.printInfo();
-  dev.rename("fak");
-    
+  dev.rename("watersensore");
+  dev.printInfo();
+
   return 0;
 }
