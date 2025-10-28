@@ -11,5 +11,5 @@ void Position::move(double dx, double dy)
 
 void Position::print() const 
 {
-    std::cout << "Position X:\t" << x << "\nPosition Y:\t" << y;
+    std::cout << "\nPosition X:\t" << x << "\nPosition Y:\t" << y << "\n";
 }
