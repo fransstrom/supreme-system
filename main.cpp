@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
   Sensor sensor("Humidity sensor");
   auto sensorReading = sensor.read();
   sensorReading.print();
-
+  //Logger
   Logger logger;
   logger.log(sensorReading,sensor.getName());
   return 0;
