@@ -1,4 +1,5 @@
 #include "Device.hpp"
+#include "Logger.hpp"
 #include "Position.hpp"
 #include "Sensor.hpp"
 int main(int argc, char *argv[]) {
@@ -16,5 +17,8 @@ int main(int argc, char *argv[]) {
   Sensor sensor("Humidity sensor");
   auto sensorReading = sensor.read();
   sensorReading.print();
+
+  Logger logger;
+  logger.log(sensorReading,sensor.getName());
   return 0;
 }
