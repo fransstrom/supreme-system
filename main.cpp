@@ -25,9 +25,9 @@ int main(int argc, char *argv[]) {
   Logger logger;
   logger.log(sensorReading, sensor.getName());
   // AirSensor
-  AirSensor airSensor1;
-  AirSensor airSensor2;
-  AirSensor airSensor3;
+  AirSensor airSensor1("Air sensor 1");
+  AirSensor airSensor2("Air sensor 2");
+  AirSensor airSensor3("Air sensor 3");
 
   std::vector<AirSensor> airSensorVector = {
       airSensor1,

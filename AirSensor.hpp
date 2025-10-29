@@ -1,8 +1,10 @@
 #pragma once
+#include "Sensor.hpp"
 #include "SensorReading.hpp"
-class AirSensor {
+class AirSensor : public Sensor {
+
 public:
-  SensorReading read();
+  AirSensor(const std::string &name);
 
 private:
 };
