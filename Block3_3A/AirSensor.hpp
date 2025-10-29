@@ -1,6 +1,6 @@
 #pragma once
+#include "../SensorReading.hpp"
 #include <string>
-#include "SensorReading.hpp"
 
 class AirSensor {
 public:

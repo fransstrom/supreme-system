@@ -1,5 +1,5 @@
-#include "Logger.hpp"
-#include "AirMonitor.hpp"
+#include "../Logger.hpp"
+#include "Block3_3A/AirMonitor.hpp"
 
 AirMonitor::AirMonitor(const std::vector<AirSensor>& sensors) 
     : sensors(sensors) 
