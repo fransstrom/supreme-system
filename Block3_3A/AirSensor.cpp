@@ -1,7 +1,8 @@
-#include "Block3_3A/AirSensor.hpp"
-#include "SensorReading.hpp"
 #include <cstdlib>
 #include <ctime>
+
+#include "AirSensor.hpp"
+#include "../SensorReading.hpp"
 
 AirSensor::AirSensor(const std::string& name)
     : name(name) 
