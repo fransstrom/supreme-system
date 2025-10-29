@@ -123,6 +123,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Block3_3A\AirMonitor.cpp" />
+    <ClCompile Include="Block3_3A\AirSensor.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="Logger.cpp" />
@@ -133,6 +135,8 @@
     <ClCompile Include="SensorReading.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Block3_3A\AirMonitor.hpp" />
+    <ClInclude Include="Block3_3A\AirSensor.hpp" />
     <ClInclude Include="Car.hpp" />
     <ClInclude Include="Device.hpp" />
     <ClInclude Include="Logger.hpp" />

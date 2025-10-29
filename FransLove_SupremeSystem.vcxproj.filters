@@ -39,6 +39,12 @@
     <ClCompile Include="SensorReading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Block3_3A\AirMonitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Block3_3A\AirSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.hpp">
@@ -60,6 +66,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sensor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Block3_3A\AirMonitor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Block3_3A\AirSensor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

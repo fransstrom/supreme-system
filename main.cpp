@@ -30,17 +30,17 @@ int main(int argc, char* argv[]) {
 	logger.log(sensorReading, sensor.getName());
 
 	/* 3a - 'AirMonitor', 'AirSensor' (Gör till funktion?)
-		AirSensor s1("Temp sensor");
-		AirSensor s2("CO2 sensor");
-		AirSensor s3("Humidity sensor");
-
-		AirMonitor monitor;
-		  monitor.addSensor(s1);
-		  monitor.addSensor(s2);
-		  monitor.addSensor(s3);
-
-		  monitor.logAll();
 	*/
+	AirSensor s1("Temp sensor");
+	AirSensor s2("CO2 sensor");
+	AirSensor s3("Humidity sensor");
+
+	AirMonitor monitor;
+	monitor.addSensor(s1);
+	monitor.addSensor(s2);
+	monitor.addSensor(s3);
+
+	monitor.logAll();
 
 	/* 3b - 'Car', 'ParkingHouse'
 	*/
@@ -60,7 +60,7 @@ int main(int argc, char* argv[]) {
 
 	//  REMOVE CAR
 	std::string regToRm;
-	std::cout << "\nOne car needs to be removed ('1', '2', or '3').\nChoose:\t";
+	std::cout << "\nOne car needs to be removed, write registration number.\nChoose:\t";
 	std::cin >> regToRm;
 
 	bool removed = parkedCar.removeCar(regToRm);

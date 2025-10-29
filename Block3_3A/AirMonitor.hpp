@@ -2,15 +2,15 @@
 #include "AirSensor.hpp"
 #include <vector>
 
-class AirMonitor 
+class AirMonitor
 {
-    public:
-        AirMonitor() = default;
-        AirMonitor(const std::vector<AirSensor>& sensors);
+public:
+	AirMonitor() = default;
+	AirMonitor(const std::vector<AirSensor>& sensors);
 
-        void addSensor(const AirSensor& sensor);
-        void logAll() const;
+	void addSensor(const AirSensor& sensor);
+	void logAll() const;
 
-    private:
-        std::vector<AirSensor> sensors;
+private:
+	std::vector<AirSensor> sensors;
 };
