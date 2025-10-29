@@ -1,10 +1,14 @@
+#include <iostream>
 #include "Device.hpp"
 #include "Logger.hpp"
 #include "Position.hpp"
 #include "Sensor.hpp"
 
-#include "AirSensor.hpp"
-#include "AirMonitor.hpp"
+#include "Block3_3A/AirSensor.hpp"
+#include "Block3_3A/AirMonitor.hpp"
+
+#include "Car.hpp"
+#include "ParkingHouse.hpp"
 
 int main(int argc, char *argv[]) {
 
@@ -23,19 +27,56 @@ int main(int argc, char *argv[]) {
   sensorReading.print();
 
   Logger logger;
-  logger.log(sensorReading,sensor.getName());
+  logger.log(sensorReading,sensor.getName()); 
 
-  //  NEW 'AirMonitor', 'AirSensor'
-  AirSensor s1("Temp sensor");
-  AirSensor s2("CO2 sensor");
-  AirSensor s3("Humidity sensor");
+/* 3a - 'AirMonitor', 'AirSensor' (Gör till funktion?)
+    AirSensor s1("Temp sensor");
+    AirSensor s2("CO2 sensor");
+    AirSensor s3("Humidity sensor");
+  
+    AirMonitor monitor;
+      monitor.addSensor(s1);
+      monitor.addSensor(s2);
+      monitor.addSensor(s3);
+  
+      monitor.logAll();
+*/
 
-  AirMonitor monitor;
-    monitor.addSensor(s1);
-    monitor.addSensor(s2);
-    monitor.addSensor(s3);
+/* 3b - 'Car', 'ParkingHouse' 
+*/
+  std::cout << "\nParking House Garage" << std::endl;
+  ParkingHouse parkedCar;
 
-    monitor.logAll();
+  Car car1{ "IOTK25", "12:34"  };
+  Car car2{ "FRA111", "23:01"  };
+  Car car3{ "LOV222", "04:34"  };
+
+  parkedCar.addCar(car1);
+  parkedCar.addCar(car2);
+  parkedCar.addCar(car3);
+
+    //  PRINT STATUS
+  parkedCar.printStatus();
+
+    //  REMOVE CAR
+  std::string regToRm;
+  std::cout << "\nOne car needs to be removed ('1', '2', or '3').\nChoose:\t";
+  std::cin >> regToRm;
+
+  bool removed = parkedCar.removeCar(regToRm);
+
+  if (removed)
+  {
+      std::cout << "\nCar '" << regToRm << "' has left this parking house.\n";
+  }   
+  else 
+  {
+      std::cout << "\nNo car with registration '" << regToRm << "' was found.\n";
+  }
+
+  std::cout << "\n[Status Updated]\n";  //  POST REMOVAL STATUS
+  parkedCar.printStatus();
+  std::cout << std::endl;
 
   return 0;
 }
