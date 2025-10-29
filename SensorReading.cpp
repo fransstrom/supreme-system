@@ -2,5 +2,5 @@
 #include <iostream>
 
 void SensorReading::print() const {
-    std::cout << "\nSensor reading:\n"<< timestamp<< ": "   << value << "\n";
+    std::cout << "\n"<< sensorName << " reading:\n"<< timestamp<< ": "   << value << "\n";
 };
