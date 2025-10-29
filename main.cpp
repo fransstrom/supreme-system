@@ -55,23 +55,27 @@ int main(int argc, char* argv[]) {
 	parkedCar.addCar(car2);
 	parkedCar.addCar(car3);
 
-	//  PRINT STATUS
-	parkedCar.printStatus();
 
 	//  REMOVE CAR
 	std::string regToRm;
-	std::cout << "\nOne car needs to be removed, write registration number.\nChoose:\t";
-	std::cin >> regToRm;
 
-	bool removed = parkedCar.removeCar(regToRm);
+	while (true)
+	{
+		//  PRINT STATUS
+		parkedCar.printStatus();
+		std::cout << "\nOne car needs to be removed, write registration number.\nChoose:\t";
 
-	if (removed)
-	{
-		std::cout << "\nCar '" << regToRm << "' has left this parking house.\n";
-	}
-	else
-	{
-		std::cout << "\nNo car with registration '" << regToRm << "' was found.\n";
+		std::cin >> regToRm;
+		bool carWasRemoved = parkedCar.removeCar(regToRm);
+		if (carWasRemoved)
+		{
+			std::cout << "\nCar '" << regToRm << "' has left this parking house.\n";
+			break;
+		}
+		else
+		{
+			std::cout << "\nNo car with registration '" << regToRm << "' was found. Please select choose a parked one.\n";
+		}
 	}
 
 	std::cout << "\n[Status Updated]\n";  //  POST REMOVAL STATUS
