@@ -1,4 +1,5 @@
 #include "Device.hpp"
+#include "Logger.hpp"
 #include "Position.hpp"
 #include "Sensor.hpp"
 int main(int argc, char *argv[]) {
@@ -12,9 +13,12 @@ int main(int argc, char *argv[]) {
   dev.printInfo();
   dev.rename("ESP32");
   dev.printInfo();
-  // Sensor
+  // Sensor 
   Sensor sensor("Humidity sensor");
   auto sensorReading = sensor.read();
   sensorReading.print();
+  //Logger
+  Logger logger;
+  logger.log(sensorReading,sensor.getName());
   return 0;
 }
