@@ -1,7 +1,11 @@
+#include "AirMonitor.hpp"
+#include "AirSensor.hpp"
 #include "Device.hpp"
 #include "Logger.hpp"
 #include "Position.hpp"
 #include "Sensor.hpp"
+#include "SensorReading.hpp"
+#include <vector>
 int main(int argc, char *argv[]) {
   // Position
   Position pos;
@@ -13,12 +17,25 @@ int main(int argc, char *argv[]) {
   dev.printInfo();
   dev.rename("ESP32");
   dev.printInfo();
-  // Sensor 
+  // Sensor
   Sensor sensor("Humidity sensor");
   auto sensorReading = sensor.read();
   sensorReading.print();
-  //Logger
+  // Logger
   Logger logger;
-  logger.log(sensorReading,sensor.getName());
+  logger.log(sensorReading, sensor.getName());
+  // AirSensor
+  AirSensor airSensor1;
+  AirSensor airSensor2;
+  AirSensor airSensor3;
+
+  std::vector<AirSensor> airSensorVector = {
+      airSensor1,
+      airSensor2,
+      airSensor3,
+  };
+  AirMonitor airMonitor(airSensorVector);
+  airMonitor.logAll();
+
   return 0;
 }
