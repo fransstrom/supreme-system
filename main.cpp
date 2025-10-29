@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
   dev.printInfo();
   dev.rename("ESP32");
   dev.printInfo();
-  // Sensor
+  // Sensor 
   Sensor sensor("Humidity sensor");
   auto sensorReading = sensor.read();
   sensorReading.print();
