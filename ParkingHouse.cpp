@@ -17,7 +17,6 @@ void ParkingHouse::removeCar(std::string &regNumber) {
   std::vector<Car>::iterator it = cars.begin();
   while (it != cars.end()) {
     if (it->regNumber == regNumber) {
-      std::cerr << "found car? " << it->regNumber << "\n";
       cars.erase(it);
     } else {
       ++it;
