@@ -1,7 +1,9 @@
 #include "AirMonitor.hpp"
 #include "AirSensor.hpp"
+#include "Car.hpp"
 #include "Device.hpp"
 #include "Logger.hpp"
+#include "ParkingHouse.hpp"
 #include "Position.hpp"
 #include "Sensor.hpp"
 #include "SensorReading.hpp"
@@ -37,5 +39,18 @@ int main(int argc, char *argv[]) {
   AirMonitor airMonitor(airSensorVector);
   airMonitor.logAll();
 
+  // Car
+  Car car1 = {.regNumber = "WJS123", .arrivalTime = "2025-10-30"};
+  Car car2 = {.regNumber = "WJS113", .arrivalTime = "2025-10-30"};
+  Car car3 = {.regNumber = "WJS133", .arrivalTime = "2025-10-30"};
+  car1.print();
+
+  ParkingHouse ph;
+  ph.addCar(car1);
+  ph.addCar(car2);
+  ph.addCar(car3);
+  ph.printStatus();
+  ph.removeCar(car3.regNumber);
+  ph.printStatus();
   return 0;
 }
