@@ -1,7 +1,9 @@
 #include "ParkingHouse.hpp"
 #include "Car.hpp"
 #include <iostream>
+#include <pstl/glue_algorithm_defs.h>
 #include <string>
+#include <vector>
 
 void ParkingHouse::addCar(Car &car) { cars.push_back(car); }
 void ParkingHouse::printStatus() {
@@ -12,9 +14,13 @@ void ParkingHouse::printStatus() {
 }
 
 void ParkingHouse::removeCar(std::string &regNumber) {
-  for (unsigned int i = 0; i < cars.size(); i++) {
-    if (regNumber == cars.at(i).regNumber) {
-      cars.erase(cars.begin() + i);
+  std::vector<Car>::iterator it = cars.begin();
+  while (it != cars.end()) {
+    if (it->regNumber == regNumber) {
+      std::cerr << "found car? " << it->regNumber << "\n";
+      cars.erase(it);
+    } else {
+      ++it;
     }
   }
 }
