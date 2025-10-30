@@ -4,7 +4,7 @@
 #include <string>
 
 // void Logger::move(double dx, double dy)
-void Logger::log(const SensorReading &reading,
-                 const std::string &sensorName) const {
-  std::cout << "\n" << sensorName << " logger \ntimestamp: "<< reading.timestamp<<"\nvalue: "<< reading.value<<"\n";
+void Logger::log(const SensorReading &reading, const std::string &sensorName) const 
+{
+	std::cout << "\n" << sensorName <<  " LOG \nTimestamp: "<< reading.timestamp <<  "\nValue: "<< reading.value<<"\n";
 }
