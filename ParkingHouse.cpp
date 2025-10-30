@@ -7,9 +7,12 @@
 
 void ParkingHouse::addCar(Car &car) { cars.push_back(car); }
 void ParkingHouse::printStatus() {
-  std::cout << "\nParking house status\n";
-  for (auto &car : cars) {
-    std::cout << car.regNumber << " : Arrival " << car.arrivalTime << "\n";
+
+  std::vector<Car>::iterator it = cars.begin();
+  std::cout << "\nGarage cars parkedGarage cars parked:\n";
+  while (it != cars.end()) {
+    it->print();
+    it++;
   }
 }
 
