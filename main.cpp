@@ -7,7 +7,6 @@
 #include "Block3_3A/AirSensor.hpp"
 #include "Block3_3A/AirMonitor.hpp"
 
-#include "Car.hpp"
 #include "ParkingHouse.hpp"
 
 int main(int argc, char* argv[]) {
@@ -40,7 +39,7 @@ int main(int argc, char* argv[]) {
 	monitor.addSensor(s2);
 	monitor.addSensor(s3);
 
-	monitor.logAll();
+	monitor.logAll(logger);
 
 	/* 3b - 'Car', 'ParkingHouse'
 	*/
@@ -54,7 +53,6 @@ int main(int argc, char* argv[]) {
 	parkedCar.addCar(car1);
 	parkedCar.addCar(car2);
 	parkedCar.addCar(car3);
-
 
 	//  REMOVE CAR
 	std::string regToRm;
