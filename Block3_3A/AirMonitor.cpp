@@ -11,11 +11,9 @@ void AirMonitor::addSensor(const AirSensor& sensor)
 	sensors.push_back(sensor);
 }
 
-void AirMonitor::logAll() const
+void AirMonitor::logAll(const Logger& logger) const
 {
-	Logger logger;
-	for (const auto& sensor
-		: sensors)
+	for (const auto& sensor: sensors)
 	{
 		SensorReading reading = sensor.read();
 		logger.log(reading, sensor.getName());
