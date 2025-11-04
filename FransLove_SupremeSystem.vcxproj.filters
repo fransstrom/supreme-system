@@ -74,5 +74,8 @@
     <ClInclude Include="Block3_3A\AirSensor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

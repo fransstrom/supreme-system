@@ -9,7 +9,7 @@ public:
 	AirMonitor(const std::vector<AirSensor>& sensors);
 
 	void addSensor(const AirSensor& sensor);
-	void logAll() const;
+	void logAll(const Logger& logger) const;
 
 private:
 	std::vector<AirSensor> sensors;

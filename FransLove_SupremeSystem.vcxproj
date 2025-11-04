@@ -139,6 +139,7 @@
     <ClInclude Include="Block3_3A\AirSensor.hpp" />
     <ClInclude Include="Car.hpp" />
     <ClInclude Include="Device.hpp" />
+    <ClInclude Include="Include.h" />
     <ClInclude Include="Logger.hpp" />
     <ClInclude Include="ParkingHouse.hpp" />
     <ClInclude Include="Position.hpp" />
